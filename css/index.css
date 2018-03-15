@@ -1,0 +1,327 @@
+body, div, p, ul, ol, li, dl, dt, dd, form, table, tr, td, hr, h1, h2, h3, h4, h5, h6, img, input, fieldset {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+img {
+  vertical-align: bottom; }
+
+.clear:after {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  content: "";
+  height: 0;
+  visibility: hidden; }
+
+.header {
+  border-bottom: 1px solid #ddd; }
+
+.top-nav {
+  width: 100%;
+  background: #f8f8f8;
+  line-height: 30px; }
+  .top-nav .top-nav-inner {
+    width: 1200px;
+    font-size: 12px;
+    margin: 0 auto; }
+    .top-nav .top-nav-inner a {
+      display: inline-block;
+      padding: 0 20px;
+      color: #666; }
+      .top-nav .top-nav-inner a em {
+        width: 18px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: sub;
+        margin-right: 5px;
+        background: url(../img/nav-bg.png) no-repeat 0 0; }
+    .top-nav .top-nav-inner .go-home {
+      float: left; }
+    .top-nav .top-nav-inner ul {
+      float: right; }
+      .top-nav .top-nav-inner ul li:nth-child(1) a {
+        border-left: 0; }
+      .top-nav .top-nav-inner ul li {
+        float: left; }
+        .top-nav .top-nav-inner ul li a {
+          height: 20px;
+          line-height: 20px;
+          border-left: 1px solid #ccc; }
+          .top-nav .top-nav-inner ul li a .weixin {
+            background-position: -25px 0; }
+          .top-nav .top-nav-inner ul li a .qq {
+            background-position: -50px 0; }
+          .top-nav .top-nav-inner ul li a .enshrine {
+            background-position: -75px 0; }
+          .top-nav .top-nav-inner ul li a .car {
+            background-position: -103px 0; }
+          .top-nav .top-nav-inner ul li a .ndent {
+            background-position: -125px 0; }
+          .top-nav .top-nav-inner ul li a .help {
+            background-position: -175px 0; }
+        .top-nav .top-nav-inner ul li a:hover {
+          color: #FF3366; }
+    .top-nav .top-nav-inner .ensh {
+      position: relative; }
+      .top-nav .top-nav-inner .ensh ul {
+        position: absolute;
+        width: 100px;
+        left: 0;
+        top: 30px;
+        background: #f8f8f8;
+        border: 1px solid #eee;
+        z-index: 10;
+        display: none; }
+        .top-nav .top-nav-inner .ensh ul li a {
+          border: 0; }
+    .top-nav .top-nav-inner .ensh:hover ul {
+      display: block; }
+
+.search {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative; }
+  .search .logo {
+    float: left;
+    margin-top: 40px; }
+    .search .logo img {
+      width: 204px;
+      height: 52px; }
+  .search .com-search {
+    position: absolute;
+    left: 360px;
+    top: 20px; }
+    .search .com-search .baby {
+      width: 56px;
+      line-height: 24px;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      background: #ff3366; }
+    .search .com-search form {
+      margin-bottom: 8px; }
+    .search .com-search .content {
+      width: 450px;
+      height: 30px;
+      border: 2px solid #f36;
+      outline: none; }
+    .search .com-search .btn {
+      display: inline-block;
+      width: 70px;
+      height: 34px;
+      border: 0;
+      background: #f36 url(../img/search.png) no-repeat center;
+      vertical-align: bottom;
+      cursor: pointer; }
+    .search .com-search .hotword a {
+      padding-top: 12px;
+      margin-right: 3px;
+      font-size: 12px;
+      color: #666; }
+    .search .com-search .hotword .hot {
+      color: #FF3366; }
+  .search .ewm {
+    float: right; }
+    .search .ewm img {
+      width: 210px;
+      height: 160px; }
+
+.con-nav {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd; }
+  .con-nav ul {
+    width: 1200px;
+    margin: 0 auto; }
+    .con-nav ul li {
+      width: 109px;
+      float: left; }
+      .con-nav ul li a {
+        display: inline-block;
+        line-height: 38px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        vertical-align: middle;
+        border-bottom: 2px solid transparent; }
+      .con-nav ul li a:hover {
+        border-bottom: 2px solid #FF0000;
+        color: #FF3366; }
+      .con-nav ul li .active {
+        border-bottom: 2px solid #FF0000;
+        color: #FF3366; }
+
+.fixTop {
+  position: fixed;
+  top: 0;
+  z-index: 100; }
+
+.carousel {
+  position: relative;
+  margin: 10px auto 0;
+  width: 1200px;
+  height: 400px;
+  overflow: hidden; }
+  .carousel .carousel-list {
+    position: relative;
+    width: 2360px; }
+    .carousel .carousel-list li {
+      width: 1200px;
+      float: left; }
+  .carousel .direction-btn {
+    display: none; }
+    .carousel .direction-btn a {
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      width: 30px;
+      line-height: 100px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 30px;
+      text-align: center; }
+    .carousel .direction-btn .prev {
+      left: 0; }
+    .carousel .direction-btn .next {
+      right: 0; }
+  .carousel .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: 0 auto;
+    padding: 0 4px;
+    width: 72px;
+    background: rgba(255, 255, 255, 0.5);
+    line-height: 0;
+    font-size: 0;
+    border-radius: 12px; }
+    .carousel .dots a {
+      margin: 6px 4px;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%; }
+    .carousel .dots .active {
+      background: red; }
+
+.section {
+  width: 1200px;
+  margin: 0 auto; }
+  .section .title {
+    margin: 40px auto 20px;
+    color: #666; }
+    .section .title span {
+      float: right;
+      font-size: 12px; }
+    .section .title h3 {
+      float: left;
+      font-size: 18px; }
+  .section .section-con {
+    width: 100%; }
+    .section .section-con .items {
+      width: 224px;
+      float: left;
+      margin-bottom: 24px;
+      margin-right: 20px; }
+      .section .section-con .items .item-img img {
+        width: 224px;
+        height: 340px; }
+      .section .section-con .items .item-money {
+        width: 224px;
+        line-height: 40px; }
+        .section .section-con .items .item-money .price {
+          font-size: 16px;
+          color: #FF3366;
+          float: left; }
+        .section .section-con .items .item-money .collect {
+          font-size: 14px;
+          color: #999;
+          float: right; }
+          .section .section-con .items .item-money .collect img {
+            width: 15px;
+            height: 15px;
+            margin-right: 3px;
+            vertical-align: sub; }
+      .section .section-con .items .details {
+        display: inline-block;
+        width: 224px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #666;
+        font-size: 12px; }
+        .section .section-con .items .details img {
+          width: 38px;
+          height: 18px;
+          margin-right: 3px; }
+      .section .section-con .items .details:hover {
+        color: #FF3366; }
+    .section .section-con .items:nth-child(5n) {
+      margin-right: 0; }
+
+.footer {
+  width: 100%;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd; }
+  .footer .footer-con {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0; }
+    .footer .footer-con .flist {
+      float: left;
+      margin-right: 100px; }
+      .footer .footer-con .flist h4 {
+        font-size: 16px;
+        color: #666; }
+      .footer .footer-con .flist .footer-link {
+        margin-top: 26px;
+        font-size: 12px; }
+        .footer .footer-con .flist .footer-link a {
+          color: #666666; }
+        .footer .footer-con .flist .footer-link a:hover {
+          color: #FF0000; }
+    .footer .footer-con .aboutus em {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: sub;
+      margin-right: 4px;
+      background: url(../img/flist-bg.png) no-repeat; }
+    .footer .footer-con .aboutus .qqzone {
+      background-position: -28px 0; }
+    .footer .footer-con .aboutus .tencent {
+      background-position: -56px 0; }
+    .footer .footer-con .service {
+      margin-left: 50px; }
+      .footer .footer-con .service img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: 0 auto; }
+    .footer .footer-con .client img {
+      width: 100px;
+      height: 100px;
+      display: block;
+      margin: 0 auto; }
+  .footer .footer_record {
+    width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #e6e6e6;
+    text-align: center;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 10px 0;
+    color: #666; }
+    .footer .footer_record a {
+      color: #666; }
+    .footer .footer_record a:hover {
+      color: #FF3366; }

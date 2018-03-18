@@ -22,6 +22,21 @@
       background: #ff3366; }
     .search .com-search form {
       margin-bottom: 8px; }
+    .search .com-search #search-list {
+      width: 450px;
+      list-style: none;
+      background: #fff;
+      font-size: 14px;
+      color: #666;
+      text-indent: 10px;
+      position: absolute;
+      border: 1px solid #ddd;
+      border-top: 0;
+      top: 58px;
+      left: 0px;
+      z-index: 999; }
+    .search .com-search #search-list li {
+      padding: 8px 4px; }
     .search .com-search .content {
       width: 450px;
       height: 30px;
@@ -83,7 +98,8 @@
   margin: 10px auto 0;
   width: 1200px;
   height: 400px;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
   .carousel .carousel-list {
     position: relative;
     width: 2360px; }

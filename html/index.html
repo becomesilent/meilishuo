@@ -16,7 +16,7 @@
 				<ul>
 					<li><a href="javascript:;"><em class="weixin"></em>微信登录</a></li>
 					<li><a href="javascript:;"><em class="qq"></em>QQ登录</a></li>
-					<li><a href="javascript:;">登录</a></li>
+					<li><a href="register.html">登录</a></li>
 					<li><a href="javascript:;">注册</a></li>
 					<li class="ensh">
 						<a href="javascript:;"><em class="enshrine"></em>我的收藏</a> 
@@ -48,9 +48,10 @@
 			<!--com-search-->
 			<div class="com-search">
 				<div class="baby">宝贝</div>
-				<form action="javascript:;" method="post">
-					<input type="text"/ class="content"><span class="btn"></span>
+				<form action="javascript:;" method="post" name="search-form"/>
+					<input type="text"class="content" name="search-content"/ ><span class="btn"></span>
 				</form>
+				<ul id="search-list"></ul>
 				<div class="hotword">
 					<a href="javascript:;" class="hot">秋季套装</a>
 					<a href="javascript:;">连衣裙</a>
@@ -425,5 +426,30 @@
 	new Carousel({
 		el: $('banner'),
 	});
+</script>
+<script type="text/javascript">
+	var form = document.forms['search-form'];
+	
+	var content = form.elements['search-content'];
+	
+	var list = document.getElementById('search-list');
+	
+	// 定义回调函数
+	function callback(data) {
+		list.innerHTML = '';
+		data.result.forEach( v => {
+			var li = document.createElement('li');
+			li.innerHTML = v[0];
+			
+			list.appendChild(li);
+		});
+	}
+	
+	content.onpropertychange = content.oninput = function () {
+		var script = document.createElement('script');
+		script.src = 'https://suggest.taobao.com/sug?code=utf-8&q=' + this.value +'&_ksTS=1519877385959_313&callback=callback&area=c2c&bucketid=7';
+		document.body.appendChild(script);
+		document.body.removeChild(script);
+	};
 </script>
 </html>

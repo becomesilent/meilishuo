@@ -13,7 +13,7 @@
 		<div class="top-nav">
 			<!--顶部nav内容-->
 			<div class="top-nav-inner clear">
-				<a href="javascript:;" class="go-home"><em class="home"></em>美丽说首页</a>
+				<a href="index.html" class="go-home"><em class="home"></em>美丽说首页</a>
 				<ul>
 					<li><a href="javascript:;"><em class="weixin"></em>微信登录</a></li>
 					<li><a href="javascript:;"><em class="qq"></em>QQ登录</a></li>
@@ -75,11 +75,40 @@
 									<li>147108</li>
 									<li>2015年02月03日</li>
 									<li>已缴纳</li>
-									<li><img src="../img/detailsImg/zhizhao.png"/></li>
+									<li>
+										<img src="../img/detailsImg/zhizhao.png"/>
+									</li>
 								</ul>
 							</div>
+							<div class="info-com-rig">
+								<div class="rig-bsr clear">
+									<ul>
+										<li>动态评分</li>
+										<li>描述相符 : <span>4.65</span></li>
+										<li>质量满意 : <span>4.73</span></li>
+										<li>价格合理 : <span>5.00</span></li>
+										<li>服务周到 : <span>4.74</span></li>
+									</ul>
+									<ul>
+										<li>比同行平均</li>
+										<li><span>高</span>0.09%</li>
+										<li><span>高</span>0.13%</li>
+										<li><span>高</span>0.00%</li>
+										<li><span>高</span>0.87%</li>
+									</ul>
+								</div>
+								<div class="del-time clear">
+									<ul>
+										<li>本店</li>
+										<li>平均发货时间 : <span>1.44</span>天</li>
+									</ul>
+									<ul>
+										<li>行业</li>
+										<li>1.23天</li> 
+									</ul>
+								</div>
+							</div>
 						</div>
-						
 					</div>
 				</div>
 				<div class="shop-action">
@@ -91,10 +120,11 @@
 			</div>
 			<!--search-con-->
 			<div class="search-con">
-				<form action="" method="post">					
-					<input type="text" class="txt" placeholder="输入你想要的商品..."/><span>搜全站</span>
+				<form action="" method="post" name="search-form">					
+					<input type="text" class="txt" placeholder="输入你想要的商品..." name="search-content"/><span>搜全站</span>
 					<a href="javascript:;">搜本店</a>
 				</form>
+				<ul id="search-list"></ul>
 			</div>
 		</div>
 	</div>
@@ -106,24 +136,24 @@
 		<a href="javascript:;" class="banner"></a>
 		<div class="nav-con">
 			<ul class="nav-list clear">
-				<li class="list-li"><a href="javascript:;" >首页</a></li>
+				<li class="list-li"><a href="index.html" >首页</a></li>
 				<li class="list-li">
 					<a href="javascript:;">全部商品</a>
 					<ul>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
-						<li><a href="javascript">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
+						<li><a href="javascript:;">T恤/打底衫/上衣</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -517,4 +547,29 @@
 </body>
 <script src="../js/detaFixTop.js"></script>
 <script src="../js/showCart.js"></script>
+<script type="text/javascript">
+	var form = document.forms['search-form'];
+	
+	var content = form.elements['search-content'];
+	
+	var list = document.getElementById('search-list');
+	
+	// 定义回调函数
+	function callback(data) {
+		list.innerHTML = '';
+		data.result.forEach( v => {
+			var li = document.createElement('li');
+			li.innerHTML = v[0];
+			
+			list.appendChild(li);
+		});
+	}
+	
+	content.onpropertychange = content.oninput = function () {
+		var script = document.createElement('script');
+		script.src = 'https://suggest.taobao.com/sug?code=utf-8&q=' + this.value +'&_ksTS=1519877385959_313&callback=callback&area=c2c&bucketid=7';
+		document.body.appendChild(script);
+		document.body.removeChild(script);
+	};
+</script>
 </html>

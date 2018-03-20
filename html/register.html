@@ -33,9 +33,11 @@
 				<!--form-->
 				<div class="login-form">
 					<form action="../php/login.php" method="post">
-						<div> <input type="text" name="account" class="account" placeholder="用户名/邮箱/手机号"/></div>
-						<div> <input type="password" name="password" class="password" placeholder="密码"/></div>
-						<input type="submit" value="登录" class="enter"/>
+						<span id="cuoTit_userName"></span>
+						<div> <input type="text" name="account" class="account" placeholder="用户名/邮箱/手机号" id="userName"/></div>
+						<span id="cuoTit_userPass"></span>
+						<div> <input type="password" name="password" class="password" placeholder="密码" id="userPass"/></div>
+						<input type="submit" value="登录" class="enter" id="form"/>
 					</form>	
 					<div class="weixin-login">
 						<a href="javascript:;"><img src="../img/detailsImg/weixin.png"/><span>微信登录</span></a>
@@ -93,5 +95,9 @@
 			  京ICP备11031139号  京公网安备110108006045   客服电话：4000-800-577  文明办网文明上网举报电话：010-82615762 <a href="javascript:;">违法不良信息举报中心</a>
 		</div>
 	</div>
+<script src="../js/register.js"></script>
+<script>
+	document.getElementById('userName').onblur = checked();
+</script>
 </body>
 </html>

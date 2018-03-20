@@ -60,19 +60,37 @@ body {
         padding: 0 0 30px 44px; }
         .content .con .login .login-form form {
           margin-top: 44px; }
+          .content .con .login .login-form form #cuoTit_userName {
+            display: none;
+            padding: 0 30px 0 23px;
+            line-height: 25px;
+            font-size: 12px;
+            color: #666;
+            background: url(../img/detailsImg/gth.png) no-repeat 10px 6px;
+            background-size: 10px 10px; }
+          .content .con .login .login-form form #cuoTit_userPass {
+            display: none;
+            padding: 0 30px 0 23px;
+            line-height: 25px;
+            font-size: 12px;
+            color: #666;
+            background: url(../img/detailsImg/gth.png) no-repeat 10px 6px;
+            background-size: 10px 10px; }
           .content .con .login .login-form form .account {
             width: 312px;
             height: 40px;
             border: 1px solid #d3c1bf;
             margin-bottom: 15px;
             background: none;
-            text-indent: 5px; }
+            text-indent: 5px;
+            outline: none; }
           .content .con .login .login-form form .password {
             width: 312px;
             height: 40px;
             border: 1px solid #d3c1bf;
             margin-bottom: 15px;
             background: none;
+            outline: none;
             text-indent: 5px; }
           .content .con .login .login-form form .enter {
             display: block;

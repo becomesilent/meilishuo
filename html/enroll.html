@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>注册</title>
-	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/reset.css" />
 	<link rel="stylesheet" href="../css/enroll.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<!--主体模块-->
 	<div class="content">
 		<div class="con">
-			<!--登录模块-->
+			<!--注册模块-->
 			<div class="login">
 				<div class="login-mod clear">
 					<!--新用户注册-->
@@ -28,14 +28,16 @@
 				<!--form-->
 				<div class="login-form">
 					<form action="../php/login.php" method="post">
-						<div> <input type="text" name="account" class="account" placeholder="用户名/邮箱/手机号"/></div>
-						<div> <input type="password" name="password" class="password" placeholder="密码"/></div>
-						<div><input type="submit" value="登录" class="enter"/></div>
+						<div id="cuoTit_shouJi">我在这</div>
+						<div> <input type="text" name="shouJi" class="shouJi" placeholder="手机号码" id="shouJi"/></div>
+						<div id="cuoTit_checkMa"></div>
+						<div class="clear"><div id="captcha"></div> <input type="text" name="checkMa" class="checkMa" placeholder="验证码" id="checkMa"/></div>
+						<div><input type="submit" value="注册" class="enter"/></div>
 						<div class="weixin-login"><input type="checkbox" name="check" /><span>我已阅读并且同意<a href="javascript:;">美丽说注册条款</a></span></div>
 					</form>	
 					
 					<div class="lg-reg">
-						<a href="javascript:;" class="findpwd"> < 已有账号登录</a>
+						<a href="register.html" class="findpwd"> < 已有账号登录</a>
 					</div>
 				</div>
 			</div>
@@ -87,4 +89,36 @@
 		</div>
 	</div>
 </body>
+<script src="../js/enroll.js"></script>
+<script>
+	document.getElementById('shouJi').onblur = checked();
+	// 编写生成4位数字字母验证码的函数，并生成10次，同时将结果存入数组
+
+function createCaptcha() {
+	var seeds = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+	var str = '';
+	for(var i = 1; i <= 4; i++) {
+		var index = Math.floor(Math.random() * seeds.length);
+
+		str = str + seeds.charAt(index);
+	}
+
+	return str;
+}
+
+var arr = [];
+for(var i = 1; i<= 10; i++) {
+	arr.push(createCaptcha());
+}
+console.log(arr);
+
+
+var oCaptcha = document.getElementById('captcha');
+oCaptcha.innerHTML = createCaptcha();
+
+oCaptcha.onclick = function () {
+	oCaptcha.innerHTML = createCaptcha();
+}
+</script>
 </html>

@@ -11,9 +11,9 @@ if($account === 'admin888' && $password === 'admin888') {
 
 	$title = '登录成功！';
 	$url = '../html/index.html';
-	require_once('../html/status.tpl');
+	require_once('../html/status.html');
 } else {
 	$title = '登录失败！';
 	$url = '../html/register.html';
-	require_once('../html/status.tpl');
+	require_once('../html/status.html');
 }

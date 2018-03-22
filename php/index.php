@@ -8,6 +8,6 @@ if(isset($_SESSION['LOGIN_OK'])) {
 	require_once('../html/index.html');
 } else {
 	// 跳转到登录界面
-	header('location:index.html');
+	header('location:index.html'); 
 }
 

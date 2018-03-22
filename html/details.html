@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>商品详情</title>
+		<title>详情列表</title>
 		<link rel="stylesheet" href="../css/common.css" />
 		<link rel="stylesheet" href="../css/details.css" />
 	</head>
@@ -164,74 +164,9 @@
 	<!--shop-detail-->
 	<div class="shop-detail clear">
 		<!--primary-goods-->
-		<div class="primary-goods clear">
-			<!--goods-img-->
-			<div class="goods-img clear">
-				<div id="large-box">
-					<img src="../img/items2.jpg" id="large-img">
-				</div>
-				<div id="middle-box">
-					<img src="../img/items2.jpg" id="middle-img">
-					<div id="shadow"></div>
-				</div>
-				<div id="small-box" class="clear">
-					<img src="../img/items2.jpg" class="act">
-					<img src="../img/items3.jpg">
-					<img src="../img/items4.jpg">
-					<img src="../img/items5.jpg">
-				</div>
-			</div>
-			<!--goods-info-->
-			<div class="goods-info">
-				<h3>子歆家中国风复古汉元素蝴蝶结系带连衣裙改良汉服古装服装短裙女</h3>
-				<!--money-news-->
-				<div class="money-news">
-					<div class="money">
-						<p>价格 :<span>￥240.00</span></p>
-					</div>
-					<div class="money-list clear">
-						<div class="prom"><p>促销价 :<span>￥168.00</span></p></div>
-						<div class="eval">
-							<p>评价 :<span>68</span>累计畅销 :<span>32</span></p>
-						</div>
-					</div>
-				</div>
-				<!--service-->
-				<div class="service">客服 :<span>联系客服</span></div>
-				<div class="color">颜色 :<img src="../img/items4.jpg"/></div>
-				<div class="size">尺码 : 
-					<span>S</span>
-					<span>M</span>
-					<span>L</span>
-				</div>
-				<div class="amount clear">
-					<span class="amount-num">数量 : </span>
-					<div class="num">
-						<span>-</span>
-						<input type="text" value="1"/>
-						<span>+</span>
-					</div>
-					库存390件
-				</div>
-				<div class="buy">
-					<a href="javascript:;" class="buy-now-buttons">立即购买</a>
-					<a href="javascript:;" class="add-to-cart" id="add-to-cart" data-id="1" data-title="子歆家中国风复古汉元素蝴蝶结系带连衣裙改良汉服古装服装短裙女" data-price="240.00" data-url="../img/items2.jpg">加入购物车</a>
-				</div>
-				<div class="social">
-					<a href="javascript:;" class="fav">390</a>
-					<a href="javascript:;" class="share">分享</a>
-				</div>
-				<div class="promise">
-					服务承诺 : 
-					<span><img src="../img/detailsImg/goods.png"/> 72小时发货</span>
-					<span><img src="../img/detailsImg/quit.png"/> 退货补运费</span>
-					<span><img src="../img/detailsImg/seven.png"/> 7天无理由退货</span>
-					<span><img src="../img/detailsImg/express.png"/> 全国包邮</span>
-				</div>
-				<div class="mode clear">
-					<div class="label">支付方式 :</div>
-					<div class="nomaibei"></div>
-				</div>
+		<div class="primary-goods clear" id="primary-goods">
+			<div id="cookie_items">
+				
 			</div>
 		</div>
 		
@@ -895,7 +830,7 @@
 	$('.col-con').tab();
 </script>
 <script src="../js/paging.js"></script>
-<script src="../js/details.js"></script>
+
 <script type="text/javascript">
 	var form = document.forms['search-form'];
 	
@@ -948,6 +883,94 @@ var extranavBd  = document.getElementsByClassName('extranav-bd')[0];
     };
 </script>
 <script src="../js/cookie.js"></script>
+
+<script>
+var orderContent = document.getElementById('cookie_items');
+
+// 读取cookie
+var sCookie = getCookie('items');
+
+var aCookie = sCookie ? JSON.parse(sCookie) : [];
+
+
+
+for(var i = 0; i < aCookie.length; i++) {
+	var oCookie = aCookie[i];
+	// 创建UL
+	var oNewUl = document.createElement('div');
+	oNewUl.className = 'primary-goods';
+	oNewUl.innerHTML = `<div class="goods-img clear">
+							<div id="large-box">
+								<img src="` + oCookie.url + `" id="large-img">
+							</div>
+							<div id="middle-box">
+								<img src="` + oCookie.url + `" id="middle-img">
+								<div id="shadow"></div>
+							</div>
+							<div id="small-box" class="clear">
+								<img src="` + oCookie.url + `" class="act">
+								<img src="../img/items2.jpg">
+								<img src="../img/items3.jpg">
+								<img src="../img/items4.jpg">
+							</div>
+						</div>
+						<div class="goods-info">
+							<h3>` + oCookie.title + `</h3>
+							<div class="money-news">
+							<div class="money">
+								<p>价格 :<span>￥240.00</span></p>
+							</div>
+							<div class="money-list clear">
+								<div class="prom">
+									<p>促销价 :<span>￥` + oCookie.price + `</span></p>
+								</div>
+								<div class="eval">
+								<p>评价 :<span>68</span>累计畅销 :<span>32</span></p>
+								</div>
+							</div>
+						</div>
+						<div class="service">
+						    客服 :<span>联系客服</span>
+						</div>
+						<div class="color">
+							颜色 :<img src="` + oCookie.url + `"/>
+						</div>
+						<div class="size">
+							尺码 : <span>S</span><span>M</span><span>L</span>
+						</div>
+						<div class="amount clear">
+							<span class="amount-num">数量 : </span>
+							<div class="num">
+								<span>-</span>
+								<input type="text" value="1"/>
+								<span>+</span>
+							</div>
+							库存390件
+						</div>
+						<div class="buy">
+							<a href="javascript:;" class="buy-now-buttons">立即购买</a>
+							<a href="javascript:;" class="add-to-cart" id="add-to-cart" data-id="1" data-title="` + oCookie.title + `" data-price="` + oCookie.price + `" data-url="` + oCookie.url + `">加入购物车</a>
+						</div>
+						<div class="social">
+							<a href="javascript:;" class="fav">390</a>
+							<a href="javascript:;" class="share">分享</a>
+						</div>
+						<div class="promise">
+							服务承诺 : <span><img src="../img/detailsImg/goods.png"/> 72小时发货</span>
+							<span><img src="../img/detailsImg/quit.png"/> 退货补运费</span>
+							<span><img src="../img/detailsImg/seven.png"/> 7天无理由退货</span>
+							<span><img src="../img/detailsImg/express.png"/> 全国包邮</span>
+							</div>
+								<div class="mode clear"><div class="label">支付方式 :</div>
+								<div class="nomaibei"></div>
+							</div>
+						</div>`;
+
+
+	orderContent.appendChild(oNewUl);
+}
+</script>
+<script src="../js/details.js"></script>
 <script>
 	var addToCart = document.getElementById('add-to-cart');
 
@@ -996,6 +1019,6 @@ var extranavBd  = document.getElementsByClassName('extranav-bd')[0];
 		// 存储到cookie中
 		setCookie('goods', JSON.stringify(aGoods), 7);
 	}
-
+	
 </script>
 </html>

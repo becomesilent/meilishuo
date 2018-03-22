@@ -18,3 +18,7 @@ function getCookie(name) {
 		}
 	}
 }
+// 删除cookie
+function removeCookie(name, path) {
+	document.cookie = name + '=;expires=-1;path=' + path;
+}

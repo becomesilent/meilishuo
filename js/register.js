@@ -1,3 +1,30 @@
+function createCaptcha() {
+	var seeds = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+	var str = '';
+	for(var i = 1; i <= 4; i++) {
+		var index = Math.floor(Math.random() * seeds.length);
+
+		str = str + seeds.charAt(index);
+	}
+
+	return str;
+}
+
+var arr = [];
+for(var i = 1; i<= 10; i++) {
+	arr.push(createCaptcha());
+}
+console.log(arr);
+
+
+var oCaptcha = document.getElementById('captcha');
+oCaptcha.innerHTML = createCaptcha();
+
+oCaptcha.onclick = function () {
+	oCaptcha.innerHTML = createCaptcha();
+}
+
 //正则判断
 function checked(){
 	//账户名只能使用数字字母下划线，且数字不能开头，长度在6-15之间
@@ -28,30 +55,9 @@ function checked(){
 		};		
 	};
 
-	//alert(checkUserName());
-
-    //ajax
-	// function ajaxCheckName(){
-	// 	$.ajax({
-	// 		url:"php/usercheck.php",
-	// 		//type:"post",
-	// 		data:{"username":$("#userName").val()},
-	// 		success:function(data){
-	// 		 if(data=="0"){
- //                    checkFlag = true;
- //                    $("#cuoTit_userName").css({display : "block"});
- //                    $("#cuoTit_userName").html("该用户名可用");
- //                  //  isExists = false;
- //                }else{
- //                    checkFlag = false;
- //                    $("#cuoTit_userName").css({display : "block"});
- //                    $("#cuoTit_userName").html("该用户名已存在");
- //                   // isExists = true;
- //                }
-	// 		}
-	// 	});
-	// }
-
+	document.getElementById("userPass").onfocus = function(){
+			document.getElementById("cap").style.display = "block";
+	}
 	//密码，可以是数字，字母，下划线，长度在6-15之间
 	document.getElementById("userPass").onblur =function checkUserPass(){
 		//1、属性
@@ -75,72 +81,31 @@ function checked(){
 			document.getElementById("cuoTit_userPass").style.display = "block";
 			document.getElementById("cuoTit_userPass").innerHTML = "密码不能为空";
 			return false;
-		};	
+		};
 	};
+	
+	
+	
 
-	//确认密码出现的条件
-	/*document.getElementById("userPass").onkeyup = function(){
-			document.getElementById("userRePass").style.display = "block";
-	}
-	//确认密码
-	document.getElementById("userRePass").onblur = function(){
-		checkUserPass();
-	}
+	//验证码	判断内容和随机产生的东西是否一致
+	document.getElementById("checkMa").onblur = checkUseMa;
 
-	function checkUserPass(){
-		//1.属性	 
-		let userRePass = document.getElementById("userRePass").value;
-		let userPass = document.getElementById("userPass").value;
+	function checkUseMa(){
+		//1.属性	
+		let checkMa=document.getElementById("checkMa").value;	
+		let checkMa_box=document.getElementById("captcha").innerHTML;
 		//2.方法
-		if(userRePass==userPass){
-			document.getElementById("cuoTit_userRePass").style.display = "none";
+		if(checkMa==checkMa_box){
+			document.getElementById("cuoTit_checkMa").style.display = "none";
 			return true;
 		}else{
-			document.getElementById("cuoTit_userRePass").style.display = "block";
-			document.getElementById("cuoTit_userRePass").innerHTML = "两次密码不一致";
+			document.getElementById("cuoTit_checkMa").style.display = "block";
+			document.getElementById("cuoTit_checkMa").innerHTML = "验证码有误";
 			return false;
 		}
-	};*/
-	//验证码	判断内容和随机产生的东西是否一致
-	//document.getElementById("checkMa").onblur = checkUseMa;
+	};
 
-//	function checkUseMa(){
-//		//1.属性	
-//		let checkMa=document.getElementById("checkMa").value;	
-//		let checkMa_box=document.getElementById("checkMa_box").innerHTML;
-//		//2.方法
-//		if(checkMa==checkMa_box){
-//			document.getElementById("cuoTit_checkMa").style.display = "none";
-//			return true;
-//		}else{
-//			document.getElementById("cuoTit_checkMa").style.display = "block";
-//			document.getElementById("cuoTit_checkMa").innerHTML = "验证码有误";
-//			return false;
-//		}
-//	};
-//
-//	//邮件验证出现条件
-//	document.getElementById("userEmail").onblur =function checkEmail(){
-//		//1、属性
-//		let regUser = /^\w+@\w+\.(com|cn|net|cc|com\.cn)$/; 
-//		let userEmail = document.getElementById("userEmail").value;
-//		//2、方法
-//		if(userEmail!=""){
-//			if(regUser.test(userEmail)){
-//				document.getElementById("cuoTit_userEmail").style.display = "none";
-//				//checkFlag=true;
-//				//document.getElementById("msgbox").style.display = "block";
-//				//ajaxCheckName();
-//				return true;
-//			}else{
-//				document.getElementById("cuoTit_userEmail").style.display = "block";
-//				document.getElementById("cuoTit_userEmail").innerHTML = "邮件格式不对";
-//				//checkFlag=false;
-//				return false;
-//			}
-//		}	
-//	}
-//
+
 //	//手机验证出现条件
 //	document.getElementById("shouJi").onblur =function checkEmail(){
 //		//1、属性
@@ -163,23 +128,4 @@ function checked(){
 //		}	
 //	}
 
-	
-
-	//表单提交条件
-	$("form").submit( function () {
-		console.log(checkUserName());	
-		console.log(checkUserPass());	
-		console.log(checkUseMa());	
-		console.log(checkUserPass());	
-		// if(checkUserName() && checkUserPass() && checkUseMa() && checkUserPass()  && checkFlag){
-		// 	return true; 
-		// }else{
-		// 	return false;
-		// }
-		if(checkUserName() && checkUserPass() && checkUserPass()  && checkFlag){
-			return true; 
-		}else{
-			return false;
-		}
-	});
 }

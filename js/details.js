@@ -65,8 +65,8 @@ oMiddleBox.onmouseout = function () {
 // 给middle-box添加移动事件
 oMiddleBox.onmousemove = function (ev) {
 	var e = ev || window.event;
-	var iL = e.clientX - oShadow.offsetWidth / 2 - oMiddleBox.offsetLeft - oBox.offsetLeft;
-	var iT = e.clientY - oShadow.offsetHeight / 3 - oMiddleBox.offsetTop - oBox.offsetTop;
+	var iL = e.pageX - oShadow.offsetWidth / 2 - oMiddleBox.offsetLeft - oBox.offsetLeft;
+	var iT = e.pageY - oShadow.offsetHeight / 3 - oMiddleBox.offsetTop - oBox.offsetTop;
 
 
 	// 限定左侧

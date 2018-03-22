@@ -60,21 +60,18 @@ body {
         padding: 0 0 30px 44px; }
         .content .con .login .login-form form {
           margin-top: 44px; }
-          .content .con .login .login-form form #cuoTit_userName {
+          .content .con .login .login-form form #cap {
+            display: none; }
+          .content .con .login .login-form form #cuoTit_userName, .content .con .login .login-form form #cuoTit_userPass, .content .con .login .login-form form #cuoTit_checkMa {
             display: none;
-            padding: 0 30px 0 23px;
+            width: 200px;
+            text-indent: 22px;
             line-height: 25px;
             font-size: 12px;
-            color: #666;
-            background: url(../img/detailsImg/gth.png) no-repeat 10px 6px;
-            background-size: 10px 10px; }
-          .content .con .login .login-form form #cuoTit_userPass {
-            display: none;
-            padding: 0 30px 0 23px;
-            line-height: 25px;
-            font-size: 12px;
-            color: #666;
-            background: url(../img/detailsImg/gth.png) no-repeat 10px 6px;
+            color: #fe2780;
+            margin-bottom: 5px;
+            border: 1px solid #fed29c;
+            background: #fef6f4 url(../img/detailsImg/gth.png) no-repeat 10px 6px;
             background-size: 10px 10px; }
           .content .con .login .login-form form .account {
             width: 312px;
@@ -103,6 +100,33 @@ body {
             font-size: 12px;
             color: #fff;
             border: 0;
+            outline: none; }
+          .content .con .login .login-form form #captcha {
+            width: 100px;
+            height: 42px;
+            background: #fd5873;
+            float: left;
+            margin-right: 12px;
+            text-align: center;
+            line-height: 42px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer; }
+          .content .con .login .login-form form .shouJi {
+            width: 312px;
+            height: 40px;
+            border: 1px solid #d3c1bf;
+            margin-bottom: 15px;
+            background: none;
+            text-indent: 5px; }
+          .content .con .login .login-form form .checkMa {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #d3c1bf;
+            margin-bottom: 15px;
+            background: none;
+            text-indent: 5px;
+            float: left;
             outline: none; }
         .content .con .login .login-form .weixin-login a {
           color: #463332;

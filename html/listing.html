@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>美丽说</title>
+	<title>列表页</title>
 	<link rel="stylesheet" href="../css/common.css"/>
-	<link rel="stylesheet" href="../css/index.css"/>
+	<link rel="stylesheet" href="../css/listing.css"/>
 </head>
 <body>
 	<!-- head部分 -->
@@ -71,9 +71,9 @@
 		<!--con-nav-->
 		<div class="con-nav">
 			<ul class="clear">
-				<li><a href="javascript:;" class="active">首页</a></li>
+				<li><a href="javascript:;">首页</a></li>
 				<li><a href="javascript:;">上衣</a></li>
-				<li><a href="javascript:;">裙子</a></li>
+				<li><a href="javascript:;" class="active">裙子</a></li>
 				<li><a href="javascript:;">裤子</a></li>
 				<li><a href="javascript:;">女鞋</a></li>
 				<li><a href="javascript:;">包包</a></li>
@@ -86,32 +86,123 @@
 		</div>
 	</div>
 	
-	<!--banner-->
-	<div class="carousel" id="banner">
-		<ul class="carousel-list">
-			<li><img src="../img/banner.jpg" alt="" /></li>
-			<li><img src="../img/banner.jpg" alt="" /></li>
-			<li><img src="../img/banner.jpg" alt="" /></li>
-			<li><img src="../img/banner.jpg" alt="" /></li>
-		</ul>
-		<div class="direction-btn">
-			<a href="javascript:;" class="prev"><</a>
-			<a href="javascript:;" class="next">></a>
+	<!--推荐-->
+	<div class="resumeContainer clear">
+		<div class="resumeWrap clear">
+			<div class="catalogInfo">
+				<a href="javascript:;">应季裙子</a>
+				<a href="javascript:;"><img src="../img/catalogInfo1.jpg"/></a>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
 		</div>
-		<div class="dots">
-			<a href="javascript:;" class="active"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
+		<div class="resumeWrap clear">
+			<div class="catalogInfo">
+				<a href="javascript:;">应季裙子</a>
+				<a href="javascript:;"><img src="../img/catalogInfo1.jpg"/></a>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+		</div>
+		<div class="resumeWrap clear">
+			<div class="catalogInfo">
+				<a href="javascript:;">应季裙子</a>
+				<a href="javascript:;"><img src="../img/catalogInfo1.jpg"/></a>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+		</div>
+		<div class="resumeWrap clear">
+			<div class="catalogInfo">
+				<a href="javascript:;">应季裙子</a>
+				<a href="javascript:;"><img src="../img/catalogInfo1.jpg"/></a>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
+			<div class="catalogChoice">
+				<ul>
+					<li>春季上新</li>
+					<li>一字领美裙</li>
+					<li>假两件美裙</li>
+					<li>衣裙套装</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-
+	
+	
 	<!--section-->
 	<div class="section clear">
-		<!--title-->
-		<div class="title clear">
-			<span>春季新款来袭 买买买</span>
-			<h3>热卖商品</h3>
+		<!--排序-->
+		<div class="orderWrap clear">
+			<!-- 流行 热销 上新 价格 -->
+			<div class="orderInfo">
+				<a href="javascript:;" class="fashion">流行</a>
+				<a href="javascript:;">热销</a>
+				<a href="javascript:;">上新</a>
+				<a href="javascript:;" class="price clear">
+					<span class="priceCon">价格</span><span class="priceArrow"></span>
+					<ul>
+						<li>价格从高到底</li>
+						<li>价格从低到高</li>
+					</ul>
+				</a>
+			</div>
+			<!--价格部分-->
+			<div class="priceWrap">
+				<input type="text" placeholder="￥"/>
+				<span>~</span>
+				<input type="text" placeholder="￥"/>
+				<a href="javascript:;">确认</a>
+			</div>
 		</div>
 		<!--section-con-->
 		<div class="section-con clear" id="box">
@@ -303,16 +394,6 @@
 		<div class="goTop"></div>
 	</div>
 </body>
-<script src="../js/common.js"></script>
-<script src="../js/carousel.js"></script>
-<!--<script src="../js/data.js"></script>-->
-<script src="../js/index.js"></script>
-<script>
-//	轮播图调用
-	new Carousel({
-		el: $('banner'),
-	});
-</script>
 <script type="text/javascript">
 //	input跨域获取
 	var form = document.forms['search-form'];
@@ -352,7 +433,8 @@
             obj.setAttribute("data-fixed",st >= ot?"fixed":"");
         }
    }
-    
+	var conNav = document.getElementsByClassName('con-nav')[0];
+    ceiling(conNav);
     // 返回顶部
     var goTop  = document.getElementsByClassName('goTop')[0];
     window.onscroll = function () {

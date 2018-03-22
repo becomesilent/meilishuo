@@ -1,6 +1,6 @@
 //search部分
 .search{
-	width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     position: relative;
     
@@ -123,97 +123,145 @@
     z-index: 999;
 }
 
-//banner
-.carousel {
-    position: relative;
-    margin: 10px auto 0;
+.resumeContainer{
     width: 1200px;
-    height: 400px;
-    overflow: hidden;
-    z-index: 1;
-    
-    .carousel-list {
-        position: relative;
-        width: 2360px;
-        li {
-            width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    .resumeWrap{
+        margin: 20px 0;
+        float: left;
+        width: 25%;
+        .catalogInfo{
             float: left;
-        }
-    }
-    
-    .direction-btn {
-        display: none;
-        a{
-            position: absolute;
-            top: 50%;
-            margin-top: -50px;
-            width: 30px;
-            line-height: 100px;
-            background: rgba(0, 0, 0, .3);
-            color: #fff;
-            font-size: 30px;
+            margin-left: 30px;
             text-align: center;
+            a{
+                display: block;
+                padding: 2px;
+                color: #333;
+                font-weight: 700;
+                font-size: 14px;
+                img{
+                    display: block;
+                    width: 60px;
+                    margin-top: 5px;
+                }
+            }
         }
-        .prev {
-            left: 0;
-        }
-        .next {
-            right: 0;
-        }
-    }
-    
-    .dots {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 10px;
-        margin: 0 auto;
-        padding: 0 4px;
-        width: 72px;
-        background: rgba(255, 255, 255, .5);
-        line-height: 0;
-        font-size: 0;
-        border-radius: 12px;
-        a {
-            margin: 6px 4px;
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-        }
-        .active {
-            background: red;
+        .catalogChoice{
+            float: left;
+            margin-left: 15px;
+            font-size: 12px;
+            ul{
+                li{
+                    margin-bottom: 10px;
+                    color: #666;
+                }
+            }
         }
     }
 }
 
+
+
 //section
 .section{
     width: 1200px;
-    margin: 0 auto;
-    // title
-    .title{
-        margin: 40px auto 20px;
-        color: #666;
-        span{
-            float: right;
-            font-size: 12px;
-        }
-        h3{
+    margin: 20px auto 0;
+    position: relative;
+    //排序
+    .orderWrap{
+        margin-top: 10px;
+        background: #f8f8f8;
+        border: 1px solid #e1e1e1;
+        margin-bottom: 10px;
+        //流行 热销 上新 价格 
+        .orderInfo{
             float: left;
-            font-size: 18px;
+            cursor: pointer;
+            a{
+                display: block;
+                float: left;
+                padding: 0 20px;
+                height: 40px;
+                font-size: 12px;
+                line-height: 40px;
+                color: #666;
+                text-align: center;
+                border: 1px solid transparent;
+            }
+            .fashion{
+                border-right: 1px solid #e1e1e1;
+                background: #fff;
+            }
+            .price{
+                position: relative;
+                span{
+                    display: block;
+                    float: left;
+                }
+                .priceArrow{
+                    margin-left: 3px;
+                    width: 10px;
+                    height: 40px;
+                    background: url(../img/priceArrow.png) no-repeat center center;
+                    background-size: 10px;
+                }
+                ul{
+                    display: none;
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 106px;
+                    border: 1px solid #c5c5c5;
+                    background-color: #fff;
+                    z-index: 10;
+                }
+                &:hover{
+                    ul{
+                        display: block;
+                    }
+                }
+            }
+        }
+        // money
+        .priceWrap{
+            float: left;
+            margin-left: 22px;
+            height: 40px;
+            line-height: 40px;
+            input{
+                width: 62px;
+                height: 22px;
+                border: 1px solid #eaeaea;
+                outline: none;
+                text-indent: 5px;
+            }
+            a{
+                padding: 3px 5px;
+                border: 1px solid #eaeaea;
+                background: #fff;
+                color: #666;
+                font-size: 12px;
+            }
         }
     }
+    
+    
+    
     // section-con
     .section-con{
         width: 100%;
         height: auto;
-        position: relative;
         .items{
             width: 224px;
-            padding: 10px;
-            position: absolute;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            &:nth-child(5n){
+                margin-right: 0;
+            }
             img{
                 width: 224px;
                 height: 340px;
@@ -390,9 +438,3 @@
         }
     }
 }
-
-
-
-
-
- 

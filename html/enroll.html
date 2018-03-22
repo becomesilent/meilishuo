@@ -29,9 +29,9 @@
 				<div class="login-form">
 					<form action="../php/login.php" method="post">
 						<div id="cuoTit_shouJi">我在这</div>
-						<div> <input type="text" name="shouJi" class="shouJi" placeholder="手机号码" id="shouJi"/></div>
+						<div> <input type="text"class="shouJi" placeholder="手机号码" id="shouJi_c"/></div>
 						<div id="cuoTit_checkMa"></div>
-						<div class="clear"><div id="captcha"></div> <input type="text" name="checkMa" class="checkMa" placeholder="验证码" id="checkMa"/></div>
+						<div class="clear" id="cap"><div id="captcha"></div> <input type="text" name="checkMa" class="checkMa" placeholder="验证码" id="checkMa"/></div>
 						<div><input type="submit" value="注册" class="enter"/></div>
 						<div class="weixin-login"><input type="checkbox" name="check" /><span>我已阅读并且同意<a href="javascript:;">美丽说注册条款</a></span></div>
 					</form>	
@@ -91,34 +91,9 @@
 </body>
 <script src="../js/enroll.js"></script>
 <script>
-	document.getElementById('shouJi').onblur = checked();
+	document.getElementById('shouJi_c').onblur = checked();
 	// 编写生成4位数字字母验证码的函数，并生成10次，同时将结果存入数组
 
-function createCaptcha() {
-	var seeds = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
-	var str = '';
-	for(var i = 1; i <= 4; i++) {
-		var index = Math.floor(Math.random() * seeds.length);
-
-		str = str + seeds.charAt(index);
-	}
-
-	return str;
-}
-
-var arr = [];
-for(var i = 1; i<= 10; i++) {
-	arr.push(createCaptcha());
-}
-console.log(arr);
-
-
-var oCaptcha = document.getElementById('captcha');
-oCaptcha.innerHTML = createCaptcha();
-
-oCaptcha.onclick = function () {
-	oCaptcha.innerHTML = createCaptcha();
-}
 </script>
 </html>

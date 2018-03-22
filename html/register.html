@@ -37,7 +37,10 @@
 						<div> <input type="text" name="account" class="account" placeholder="用户名/邮箱/手机号" id="userName"/></div>
 						<span id="cuoTit_userPass"></span>
 						<div> <input type="password" name="password" class="password" placeholder="密码" id="userPass"/></div>
+						<span id="cuoTit_checkMa"></span>
+						<div class="clear" id="cap"><div id="captcha"></div> <input type="text" name="checkMa" class="checkMa" placeholder="验证码" id="checkMa"/></div>
 						<input type="submit" value="登录" class="enter" id="form"/>
+						
 					</form>	
 					<div class="weixin-login">
 						<a href="javascript:;"><img src="../img/detailsImg/weixin.png"/><span>微信登录</span></a>
@@ -97,7 +100,8 @@
 	</div>
 <script src="../js/register.js"></script>
 <script>
-	document.getElementById('userName').onblur = checked();
+
+document.getElementById('userName').onblur = checked();
 </script>
 </body>
 </html>
